@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carga exitosa</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{url_for('styles', path='/basicStyles.css')}}">
+
+
+</head>
+<body>
+
+<header>
+    
+    
+    <div class="TitleBlock">
+        <div class="textosTittle">Procesamiento exitoso de la cuenca</div>
+        <div class="textosSubtittle">Su cuenca ha sido procesada de manera correcta</div>
+        <form class="blueForm" action="http://127.0.0.1:8000/resultados_cuenca">
+            <button class="btn third" type="submit">Ver resultados de la cuenca</button>
+        </form>
+    </div>
+
+
+</header>
+</body>
+</html>

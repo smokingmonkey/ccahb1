@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{url_for('styles', path='/basicStyles.css')}}">
+    
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+
+</head>
+<body>
+
+<header>
+    
+    <div class="TitleBlock">
+        <div class="textosTittle">Mapas del raster</div>
+        <div class="textosSubtittle">Presiona un boton para visitar un mapa</div>
+        <form class="blueForm" action="http://127.0.0.1:8000/mapa_raster_base">
+            <button class="btn third" type="submit">Mapa general</button>
+        </form>
+        <form class="blueForm" action="http://127.0.0.1:8000/mapa_acumulacion_simple">
+            <button class="btn third" type="submit">Mapa de acumulación</button>
+        </form>
+        <form class="blueForm" action="http://127.0.0.1:8000/mapa_acumulacion_detalle">
+            <button class="btn third" type="submit">Mapa de acumulación
+                complejo
+            </button>
+        </form>
+    </div>
+
+
+</header>
+</body>
+</html>

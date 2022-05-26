@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesamiento exitoso</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+        <link rel="stylesheet" href="{{url_for('styles', path='/basicStyles.css')}}">
+    
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+<!--    <link rel="stylesheet" href="../../FrontEnd/Styles/basicStyles.css">-->
+
+</head>
+<body>
+
+<header>
+    <!--    <div class="wrapper">-->
+    <!--        <div id="globeVizBack"></div>-->
+    <!--        <div class="globeViz" id="globeViz"></div>-->
+    <!--    </div>-->
+    
+    
+    <!--    <img src="{{url_for('graficas',path='/MapaRaster.png') }}" ,alt="RasterProcesado">-->
+    <!--    <img src="{{url_for('graficas',path='/MapaDetalleRaster.png') }}" ,alt="DetalleRaster">-->
+    <!--    <img src="{{url_for('graficas',path='/MapaFlujoRaster.png') }}" ,alt="FlujoRaster">-->
+    <div class="RasterTitlesBlock">
+        <div class="textosRasterTittle">Raster procesado</div>
+        <div class="textosRasterSubtittle">Su raster ha sido procesado de manera correcta</div>
+        <form class="blueForm" action="http://127.0.0.1:8000/pagina_mapas">
+            <button class="btn third" type="submit">Ver mapas</button>
+        </form>
+    </div>
+    <div class="w3-content" style="max-width:500px; background-color: white; padding: 20px ">
+        
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaRaster.png') }}" style="width:100%;display:none"
+             ,alt="RasterProcesado">
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaDetalleRaster.png') }}" style="width:100%"
+             ,alt="DetalleRaster">
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaFlujoRaster.png') }}" style="width:100%;display:none"
+             ,alt="FlujoRaster">
+        
+        <div class="w3-row-padding w3-section">
+            
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{{url_for('graficas',path='/MapaRaster.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+            </div>
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{{url_for('graficas',path='/MapaDetalleRaster.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+            </div>
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{{url_for('graficas',path='/MapaFlujoRaster.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function currentDiv(n)
+        {
+            showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n)
+        {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-opacity-off";
+        }
+    </script>
+
+
+</header>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados cuenca</title>
+</head>
+<body>
+<h1>Esta es la página de resultados de la cuenca</h1>
+<p>Sus resultados son los siguientes</p>
+<img src="{{url_for('graficas',path='/MapaFlujoCuencaSeleccionada.png') }}",alt="CuencaProcesada">
+<img src="{{url_for('graficas',path='/MapaInundacionCuencaSeleccionada.png') }}",alt="ArroyosProcesados">
+</body>
+</html>

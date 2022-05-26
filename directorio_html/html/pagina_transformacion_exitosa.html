@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRANSFORMACION CORRECTA</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{url_for('styles', path='/basicStyles.css')}}">
+    
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+
+</head>
+<body>
+
+<header>
+    <div class="wrapper">
+        <div id="globeVizBack"></div>
+        <div class="globeViz" id="globeViz"></div>
+    </div>
+    
+    <div class="TitleBlock">
+        <div class="textosTittle">Raster transformado con exito</div>
+        <div class="textosSubtittle">Presione continuar para visitar la página de procesamiento</div>
+        <a href="/datos/raster_transformado/" download="tr">
+        </a>
+        <form class="blueForm" action="http://127.0.0.1:8000/pagina_procesamiento">
+            <button class="btn third" type="submit">Continuar</button>
+        </form>
+    </div>
+    
+    <script src="{{url_for('globeJs', path='/Globe.js')}}"></script>
+    <!--    <link  href="{{url_for('styles', path='/basicStyles.css')}}">-->
+
+
+</header>
+</body>
+</html>

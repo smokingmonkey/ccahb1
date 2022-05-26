@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesamiento exitoso</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <link rel="stylesheet" href="{{url_for('styles', path='/basicStyles.css')}}">
+
+
+</head>
+<body>
+
+<header>
+    
+    <div class="RasterTitlesBlock">
+        <div class="textosRasterTittle">Resultados de la cuenca</div>
+        <div class="textosRasterSubtittle">Resultados:</div>
+    </div>
+    <div class="w3-content" style="max-width:500px; background-color: white; padding: 20px ">
+        
+        
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaFlujoCuencaSeleccionada.png') }}"
+             ,alt="CuencaProcesada" style="width:100%;display:none"
+        >
+        
+        
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaDrenajeCuencaSeleccionada.png') }}"
+             ,alt="ArroyosProcesados" style="width:100%"
+        >
+        
+        <img class="mySlides" src="{{url_for('graficas',path='/MapaInundacionCuencaSeleccionada.png') }}"
+             ,alt="InundacionProcesada" style="width:100%">
+        
+        
+        <div class="w3-row-padding w3-section">
+            
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off"
+                     src="{{url_for('graficas',path='/MapaFlujoCuencaSeleccionada.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+            </div>
+            
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off"
+                     src="{{url_for('graficas',path='/MapaDrenajeCuencaSeleccionada.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+            </div>
+            
+            <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off"
+                     src="{{url_for('graficas',path='/MapaInundacionCuencaSeleccionada.png') }}"
+                     style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+            </div>
+        
+        </div>
+    </div>
+    
+    <script>
+        function currentDiv(n)
+        {
+            showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n)
+        {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-opacity-off";
+        }
+    </script>
+
+
+</header>
+</body>
+</html>
